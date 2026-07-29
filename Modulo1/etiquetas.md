@@ -5,16 +5,19 @@
 ## Índice
 
 1. [Conceptos básicos](#conceptos-basicos)
-2. [Estructura mínima de un documento](#estructura-minima-de-un-documento)
-3. [Referencia de elementos por categoría](#referencia-de-elementos-por-categoria)
-4. [Elementos vacíos](#elementos-vacios)
-5. [Atributos globales](#atributos-globales)
-6. [Tipos de input](#tipos-de-input)
-7. [Comentarios y entidades](#comentarios-y-entidades)
-8. [Etiquetas obsoletas](#etiquetas-obsoletas)
-9. [Buenas prácticas](#buenas-practicas)
-10. [Ejemplo completo](#ejemplo-completo)
-11. [Fuentes](#fuentes)
+2. [Qué es DOCTYPE](#que-es-doctype)
+3. [Estructura mínima de un documento HTML5](#estructura-minima-de-un-documento-html5)
+4. [Etiquetas incorporadas o estandarizadas en HTML5](#etiquetas-incorporadas-o-estandarizadas-en-html5)
+5. [HTML5 y el estándar HTML actual](#html5-y-el-estandar-html-actual)
+6. [Referencia de elementos por categoría](#referencia-de-elementos-por-categoria)
+7. [Elementos vacíos](#elementos-vacios)
+8. [Atributos globales](#atributos-globales)
+9. [Tipos de input](#tipos-de-input)
+10. [Comentarios y entidades](#comentarios-y-entidades)
+11. [Etiquetas obsoletas](#etiquetas-obsoletas)
+12. [Buenas prácticas](#buenas-practicas)
+13. [Ejemplo completo](#ejemplo-completo)
+14. [Fuentes](#fuentes)
 
 ## Conceptos básicos
 
@@ -22,7 +25,8 @@
 - **Elemento:** conjunto formado por la etiqueta de apertura, el contenido y la etiqueta de cierre: `<p>Texto</p>`.
 - **Atributo:** información adicional incluida en la etiqueta de apertura: `<a href="pagina.html">Enlace</a>`.
 - **Elemento vacío:** elemento que no contiene contenido ni etiqueta de cierre, como `<img>` o `<br>`.
-- **`<!DOCTYPE html>`:** declaración que activa el modo estándar de HTML; no es una etiqueta HTML.
+- **`<!DOCTYPE html>`:** declaración que activa el modo estándar de HTML; no es una etiqueta HTML ni un elemento.
+- **HTML5:** quinta gran revisión histórica de HTML. En la actualidad, HTML se mantiene como un **estándar vivo**, por lo que normalmente se habla simplemente de HTML.
 
 ### Anatomía de un elemento
 
@@ -37,7 +41,70 @@
 | Contenido | `Visitar sitio` |
 | Etiqueta de cierre | `</a>` |
 
-## Estructura mínima de un documento
+## Qué es DOCTYPE
+
+La declaración:
+
+```html
+<!DOCTYPE html>
+```
+
+se escribe en la **primera línea** del documento, antes de `<html>`.
+
+### ¿Qué significa?
+
+`DOCTYPE` es la abreviatura de **Document Type Declaration**, es decir, **declaración del tipo de documento**.
+
+No es una etiqueta porque:
+
+- no representa contenido;
+- no crea un elemento dentro del DOM;
+- no tiene etiqueta de cierre;
+- comienza con `<!` y no con la sintaxis normal de un elemento.
+
+### ¿Para qué sirve?
+
+Su función principal es indicar al navegador que debe interpretar la página utilizando el **modo estándar**. Si se omite, el navegador puede activar el *quirks mode* o modo de compatibilidad, que imita comportamientos antiguos y puede producir diferencias en CSS y en la presentación.
+
+### DOCTYPE de HTML5
+
+```html
+<!DOCTYPE html>
+```
+
+El DOCTYPE de HTML5 es corto, no distingue entre mayúsculas y minúsculas y no necesita enlazar una DTD externa.
+
+También es válido escribir:
+
+```html
+<!doctype html>
+```
+
+Por convención se utiliza normalmente la forma en minúsculas.
+
+### Comparación con versiones anteriores
+
+En HTML 4.01 se utilizaban declaraciones más extensas, por ejemplo:
+
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+```
+
+En XHTML 1.0 también se hacía referencia a una DTD:
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+```
+
+En un proyecto moderno no es necesario utilizar esas declaraciones antiguas. Se debe emplear:
+
+```html
+<!DOCTYPE html>
+```
+
+## Estructura mínima de un documento HTML5
 
 ```html
 <!DOCTYPE html>
@@ -53,6 +120,233 @@
 </body>
 </html>
 ```
+
+## Etiquetas incorporadas o estandarizadas en HTML5
+
+HTML5 mantuvo muchas etiquetas que ya existían en HTML 4, como `<html>`, `<head>`, `<body>`, `<p>`, `<div>`, `<a>`, `<img>`, `<table>` y `<form>`. Su principal aporte fue agregar elementos con mayor semántica, soporte multimedia nativo, gráficos, controles de formulario y componentes interactivos.
+
+La siguiente tabla reúne los elementos incorporados, estandarizados o especialmente asociados con HTML5 que continúan siendo relevantes.
+
+### Estructura semántica
+
+| Etiqueta | Descripción |
+|---|---|
+| `<article>` | Contenido autónomo que puede distribuirse o reutilizarse independientemente. |
+| `<aside>` | Contenido complementario, como una barra lateral o información relacionada. |
+| `<figcaption>` | Leyenda de una figura. |
+| `<figure>` | Agrupa una imagen, gráfico, código u otro contenido autónomo con una leyenda opcional. |
+| `<footer>` | Pie de página o de una sección. |
+| `<header>` | Cabecera de una página o sección. |
+| `<hgroup>` | Agrupa un encabezado con subtítulos o contenido introductorio relacionado. |
+| `<main>` | Contenido principal del documento. |
+| `<nav>` | Bloque de enlaces principales de navegación. |
+| `<section>` | Sección temática del contenido. |
+
+### Texto y datos semánticos
+
+| Etiqueta | Descripción |
+|---|---|
+| `<bdi>` | Aísla la dirección de escritura de un fragmento de texto. |
+| `<data>` | Relaciona contenido visible con un valor legible por máquinas. |
+| `<mark>` | Resalta texto relevante dentro de un contexto. |
+| `<ruby>` | Contenedor de anotaciones de pronunciación o significado, principalmente para idiomas asiáticos. |
+| `<rt>` | Texto de una anotación ruby. |
+| `<rp>` | Paréntesis alternativos para navegadores sin soporte de ruby. |
+| `<time>` | Representa fechas, horas o duraciones de manera semántica. |
+| `<wbr>` | Sugiere un punto posible de salto dentro de una palabra o cadena larga. |
+
+### Multimedia y gráficos
+
+| Etiqueta | Descripción |
+|---|---|
+| `<audio>` | Reproduce audio sin depender de complementos externos. |
+| `<video>` | Reproduce video nativamente. |
+| `<source>` | Proporciona fuentes alternativas para audio o video. |
+| `<track>` | Añade subtítulos, descripciones, capítulos u otras pistas temporizadas. |
+| `<canvas>` | Superficie de dibujo controlada mediante JavaScript. |
+| `<embed>` | Incrusta contenido externo; HTML5 normalizó su uso dentro del lenguaje. |
+
+### Formularios y mediciones
+
+| Etiqueta | Descripción |
+|---|---|
+| `<datalist>` | Proporciona sugerencias para un campo `<input>`. |
+| `<meter>` | Representa una medida dentro de un intervalo conocido. |
+| `<output>` | Presenta el resultado de un cálculo o acción. |
+| `<progress>` | Muestra el avance de una tarea. |
+
+### Interacción y plantillas
+
+| Etiqueta | Descripción |
+|---|---|
+| `<details>` | Crea un panel de información que puede abrirse y cerrarse. |
+| `<summary>` | Encabezado o activador visible de `<details>`. |
+| `<dialog>` | Representa un cuadro de diálogo o ventana modal/no modal. |
+| `<template>` | Guarda fragmentos HTML que no se renderizan hasta ser utilizados mediante JavaScript. |
+
+### Ejemplo de estructura semántica HTML5
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de HTML5</title>
+</head>
+<body>
+  <header>
+    <h1>Revista de tecnología</h1>
+
+    <nav aria-label="Navegación principal">
+      <a href="#noticias">Noticias</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <article id="noticias">
+      <header>
+        <h2>Robótica educativa</h2>
+        <p>
+          Publicado el
+          <time datetime="2026-07-29">29 de julio de 2026</time>
+        </p>
+      </header>
+
+      <section>
+        <h3>Descripción</h3>
+        <p>Los robots pueden apoyar experiencias de aprendizaje STEM.</p>
+
+        <figure>
+          <img src="robot.jpg" alt="Robot educativo en una sala de clases">
+          <figcaption>Ejemplo de recurso para actividades STEM.</figcaption>
+        </figure>
+      </section>
+
+      <footer>
+        <p>Autora: Sandra Cano</p>
+      </footer>
+    </article>
+
+    <aside>
+      <h2>Contenido relacionado</h2>
+      <p>Programación, inteligencia artificial y pensamiento computacional.</p>
+    </aside>
+  </main>
+
+  <footer id="contacto">
+    <p>Información de contacto institucional.</p>
+  </footer>
+</body>
+</html>
+```
+
+### Nuevos tipos de input asociados con HTML5
+
+HTML5 amplió `<input>` mediante el atributo `type`:
+
+| Tipo | Finalidad |
+|---|---|
+| `color` | Seleccionar un color. |
+| `date` | Seleccionar una fecha. |
+| `datetime-local` | Seleccionar fecha y hora local. |
+| `email` | Introducir una dirección de correo electrónico. |
+| `month` | Seleccionar un mes y un año. |
+| `number` | Introducir un valor numérico. |
+| `range` | Seleccionar un valor mediante un control deslizante. |
+| `search` | Introducir un término de búsqueda. |
+| `tel` | Introducir un número telefónico. |
+| `time` | Seleccionar una hora. |
+| `url` | Introducir una dirección web. |
+| `week` | Seleccionar una semana del año. |
+
+Ejemplo:
+
+```html
+<form>
+  <label for="correo">Correo:</label>
+  <input id="correo" name="correo" type="email" required>
+
+  <label for="fecha">Fecha:</label>
+  <input id="fecha" name="fecha" type="date">
+
+  <label for="nivel">Nivel:</label>
+  <input id="nivel" name="nivel" type="range" min="1" max="10" value="5">
+
+  <button type="submit">Enviar</button>
+</form>
+```
+
+### Atributos de formularios destacados en HTML5
+
+Entre los atributos incorporados o ampliados se encuentran:
+
+- `autocomplete`
+- `autofocus`
+- `form`
+- `formaction`
+- `formenctype`
+- `formmethod`
+- `formnovalidate`
+- `formtarget`
+- `list`
+- `max`
+- `min`
+- `multiple`
+- `pattern`
+- `placeholder`
+- `required`
+- `step`
+
+Ejemplo:
+
+```html
+<input
+  type="text"
+  name="codigo"
+  placeholder="Ejemplo: HTML5-01"
+  pattern="[A-Z0-9-]+"
+  required
+  autofocus
+>
+```
+
+### Elementos cuya semántica fue redefinida en HTML5
+
+Algunas etiquetas ya existían, pero HTML5 precisó o modificó su significado:
+
+| Etiqueta | Significado semántico moderno |
+|---|---|
+| `<b>` | Texto al que se desea llamar la atención, sin indicar mayor importancia. |
+| `<i>` | Texto en otra voz, idioma, término técnico o convención. |
+| `<s>` | Información que dejó de ser válida o relevante. |
+| `<small>` | Comentarios secundarios, aclaraciones o letra pequeña. |
+| `<u>` | Anotación no textual, no un simple recurso decorativo. |
+
+## HTML5 y el estándar HTML actual
+
+Aunque el nombre **HTML5** sigue utilizándose ampliamente en cursos y documentación, actualmente HTML se desarrolla como un **Living Standard** o estándar vivo.
+
+Esto significa que:
+
+- no se escribe una versión dentro de `<html>`;
+- no existe una sintaxis como `<html version="5">`;
+- `<!DOCTYPE html>` continúa siendo el DOCTYPE correcto;
+- los elementos nuevos pueden incorporarse al estándar sin esperar una versión numerada completa.
+
+Algunos elementos presentes en la referencia general de este archivo son posteriores a la especificación HTML5 original o pertenecen a tecnologías web modernas:
+
+| Elemento | Clasificación orientativa |
+|---|---|
+| `<picture>` | Incorporado posteriormente para imágenes adaptables. |
+| `<slot>` | Pertenece a Web Components y Shadow DOM. |
+| `<search>` | Elemento semántico reciente del estándar vivo. |
+| `<selectedcontent>` | Elemento reciente para controles `<select>` personalizables. |
+| `<fencedframe>` | Elemento experimental orientado a contenido incrustado con privacidad. |
+| `<geolocation>` | Elemento experimental. |
+
+Por esta razón, una página moderna puede denominarse informalmente “HTML5”, aunque técnicamente utilice el estándar HTML actual.
 
 ## Referencia de elementos por categoría
 
@@ -461,7 +755,9 @@ Para mostrar código HTML como texto, se deben escapar los signos `<` y `>`:
 
 ## Fuentes
 
-- MDN Web Docs, **Referencia de elementos HTML**.
 - WHATWG, **HTML Living Standard**.
+- W3C, **HTML5 — Candidate Recommendation de 2014**.
+- MDN Web Docs, **Referencia de elementos HTML**.
+- MDN Web Docs, **Referencia de atributos HTML**.
 
 > HTML es un estándar vivo. Los elementos experimentales pueden cambiar y requieren revisar compatibilidad antes de utilizarlos.
