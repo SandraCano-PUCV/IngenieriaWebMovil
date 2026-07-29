@@ -1,6 +1,6 @@
 # Contenidos
 # Módulo 1
-- [Etiquetas HTML](etiquetas.md)
+- [Etiquetas HTML](Modulo1/etiquetas.md)
 -  
 
 
