@@ -1,5 +1,6 @@
-## Caso 1: Sitio web informativo para un laboratorio de robótica educativa
-1. Contexto
+# Caso 1: Sitio web informativo para un laboratorio de robótica educativa
+
+## Contexto
 El Laboratorio de Robótica Educativa AulaBot necesita un sitio web sencillo para presentar sus actividades, informar sobre los talleres disponibles y permitir que estudiantes interesados completen un formulario de contacto.
 
 Actualmente, el laboratorio no cuenta con una página web propia. La institución solicita desarrollar una primera versión estática utilizando únicamente HTML5 y CSS3.
