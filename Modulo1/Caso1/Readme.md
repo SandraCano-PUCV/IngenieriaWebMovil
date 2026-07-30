@@ -470,7 +470,7 @@ Con `border-box`, el tamaño declarado incluye el relleno y el borde.
 
 Un sitio responsivo se adapta a teléfonos, tabletas y computadores.
 
-Se deben utilizar:
+Un sitio responsivo debe utilizar:
 
 - imágenes fluidas;
 - unidades relativas;
@@ -494,11 +494,13 @@ img {
 }
 ```
 
+
+
 ---
 
 ## 16. Formulario
 
-El formulario debe incluir:
+El formulario incluye:
 
 - nombre;
 - correo;
@@ -514,72 +516,10 @@ Como el proyecto utiliza únicamente HTML y CSS, el formulario no almacenará lo
 
 ---
 
-## 17. Instrucciones de ejecución
 
-1. Descargar o copiar la carpeta del proyecto.
-2. Verificar que `index.html`, `styles.css` e `img/` mantengan la estructura indicada.
-3. Abrir `index.html` en un navegador.
-4. Probar los enlaces internos del menú.
-5. Cambiar el tamaño de la ventana para comprobar el diseño responsivo.
-6. Completar el formulario para revisar la validación HTML5.
-
-No se requiere instalar dependencias.
-
----
-
-## 18. Restricciones
-
-Se permite utilizar:
-
-- HTML5;
-- CSS3;
-- Flexbox;
-- CSS Grid;
-- media queries;
-- imágenes locales.
-
-No se permite utilizar:
-
-- JavaScript;
-- Bootstrap;
-- Tailwind CSS;
-- React;
-- Angular;
-- Vue;
-- jQuery;
-- plantillas prediseñadas.
-
----
-
-## 19. Criterios de evaluación
-
-| Criterio | Ponderación |
-|---|---:|
-| Estructura correcta del documento HTML5 | 10 % |
-| Uso de etiquetas semánticas | 15 % |
-| Navegación mediante enlaces internos | 10 % |
-| Tarjetas, tabla y formulario | 20 % |
-| Organización y calidad del CSS | 15 % |
-| Uso correcto de Flexbox o Grid | 10 % |
-| Diseño responsivo | 10 % |
-| Accesibilidad básica | 5 % |
-| Organización de archivos | 5 % |
-| **Total** | **100 %** |
-
----
 
 ## 20. Conclusión
 
 Este caso permite aplicar los fundamentos del desarrollo web mediante un proyecto construido exclusivamente con HTML5 y CSS3.
 
 Flexbox permite organizar y alinear elementos de forma flexible en una fila o columna. CSS Grid facilita la construcción de estructuras con filas y columnas.
-
-Al finalizar, se espera comprender la relación entre:
-
-- estructura HTML;
-- estilos CSS;
-- modelo de caja;
-- Flexbox;
-- CSS Grid;
-- diseño responsivo;
-- accesibilidad básica.
