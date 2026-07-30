@@ -498,7 +498,454 @@ img {
 
 ---
 
-## 16. Formulario
+
+## 16. ¿Qué son las media queries?
+
+Las **media queries** son reglas de CSS que permiten aplicar estilos solamente cuando se cumple una condición relacionada con el dispositivo o la ventana del navegador.
+
+Su sintaxis general es:
+
+```css
+@media (condición) {
+  /* Reglas que se aplican si la condición se cumple */
+}
+```
+
+Ejemplo:
+
+```css
+@media (min-width: 48rem) {
+  .hero__contenido {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+```
+
+La regla anterior indica que, cuando la ventana tenga al menos `48rem`, la sección principal se organizará en dos columnas.
+
+### Enfoque mobile first
+
+En el enfoque **mobile first**, los estilos iniciales se diseñan para pantallas pequeñas. Después se agregan media queries con `min-width` para ampliar progresivamente el diseño.
+
+```css
+/* Diseño inicial: teléfono */
+.hero__contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Desde una tableta o pantalla mediana */
+@media (min-width: 48rem) {
+  .hero__contenido {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+```
+
+Este enfoque suele facilitar:
+
+- código más simple;
+- carga progresiva;
+- adaptación a pantallas pequeñas;
+- mantenimiento del diseño.
+
+### `min-width`
+
+Aplica estilos desde un ancho mínimo hacia pantallas mayores.
+
+```css
+@media (min-width: 48rem) {
+  .menu {
+    flex-direction: row;
+  }
+}
+```
+
+### `max-width`
+
+Aplica estilos hasta un ancho máximo.
+
+```css
+@media (max-width: 47.99rem) {
+  .menu {
+    flex-direction: column;
+  }
+}
+```
+
+Se utiliza `47.99rem` para evitar que esta regla coincida exactamente con otra que comience en `48rem`.
+
+### Rango de ancho
+
+```css
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .rejilla-talleres {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+```
+
+### Orientación de pantalla
+
+```css
+@media (orientation: landscape) {
+  .hero {
+    min-height: 70vh;
+  }
+}
+```
+
+- `portrait`: orientación vertical;
+- `landscape`: orientación horizontal.
+
+### Preferencia de movimiento reducido
+
+Algunas personas configuran el sistema para reducir animaciones.
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    transition-duration: 0.01ms;
+  }
+}
+```
+
+### Preferencia de tema oscuro
+
+```css
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #f4f4f4;
+    background-color: #151515;
+  }
+}
+```
+
+### Impresión
+
+```css
+@media print {
+  nav,
+  .formulario__acciones {
+    display: none;
+  }
+
+  body {
+    color: black;
+    background: white;
+  }
+}
+```
+
+### Puntos de quiebre orientativos
+
+No existe un conjunto universal y obligatorio de puntos de quiebre. Deben elegirse observando cuándo el contenido deja de verse correctamente.
+
+La siguiente escala puede utilizarse como referencia inicial:
+
+| Tipo de pantalla | Ancho orientativo | Equivalencia aproximada |
+|---|---:|---:|
+| Teléfono pequeño | Menos de `30rem` | Menos de 480 px |
+| Teléfono grande | Desde `30rem` | Desde 480 px |
+| Tableta pequeña | Desde `40rem` | Desde 640 px |
+| Tableta | Desde `48rem` | Desde 768 px |
+| Computador portátil | Desde `64rem` | Desde 1024 px |
+| Escritorio | Desde `80rem` | Desde 1280 px |
+| Pantalla amplia | Desde `90rem` | Desde 1440 px |
+
+La equivalencia supone un tamaño inicial de fuente de aproximadamente `16px`:
+
+```text
+1rem ≈ 16px
+48rem ≈ 768px
+64rem ≈ 1024px
+```
+
+Los puntos de quiebre del proyecto AulaBot pueden reducirse a tres niveles:
+
+```css
+/* Base: teléfono */
+
+/* Tableta */
+@media (min-width: 48rem) {
+  /* Cambios de distribución */
+}
+
+/* Escritorio */
+@media (min-width: 64rem) {
+  /* Más columnas o mayor separación */
+}
+```
+
+### Media queries aplicadas a AulaBot
+
+```css
+/* Base: teléfonos */
+.encabezado__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero__contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Desde 48rem: tabletas */
+@media (min-width: 48rem) {
+  .encabezado__contenido {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    width: auto;
+    flex-direction: row;
+  }
+
+  .hero__contenido {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desde 64rem: computadores */
+@media (min-width: 64rem) {
+  .rejilla-talleres {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+```
+
+---
+
+## 17. Unidades de medida en CSS
+
+CSS permite utilizar unidades absolutas y relativas.
+
+### Unidades absolutas
+
+Las unidades absolutas representan una medida definida.
+
+| Unidad | Descripción | Uso habitual |
+|---|---|---|
+| `px` | Píxel CSS | Bordes, detalles y algunos tamaños mínimos |
+| `pt` | Punto tipográfico | Documentos destinados a impresión |
+| `cm` | Centímetros | Impresión |
+| `mm` | Milímetros | Impresión |
+| `in` | Pulgadas | Impresión |
+
+Ejemplo:
+
+```css
+.tarjeta {
+  border: 1px solid #cccccc;
+}
+```
+
+Aunque `px` se considera una unidad absoluta en CSS, representa un píxel de referencia y no necesariamente un píxel físico de la pantalla.
+
+### Unidades relativas
+
+Las unidades relativas dependen de otro valor, como la fuente, el contenedor o la ventana.
+
+| Unidad | Se calcula respecto de | Uso recomendado |
+|---|---|---|
+| `%` | Tamaño del elemento de referencia | Anchos y distribuciones fluidas |
+| `em` | Tamaño de fuente del elemento o contexto | Componentes escalables |
+| `rem` | Tamaño de fuente del elemento raíz `<html>` | Tipografía y espaciado general |
+| `vw` | 1 % del ancho de la ventana | Dimensiones relacionadas con la pantalla |
+| `vh` | 1 % del alto de la ventana | Alturas de secciones |
+| `dvh` | 1 % del alto dinámico de la ventana | Altura móvil considerando barras del navegador |
+| `vmin` | 1 % de la dimensión menor | Escalado proporcional |
+| `vmax` | 1 % de la dimensión mayor | Escalado proporcional |
+| `ch` | Ancho aproximado del carácter `0` | Controlar longitud de lectura |
+| `fr` | Fracción del espacio disponible | Columnas y filas de CSS Grid |
+| `lh` | Altura de línea del elemento | Espaciado relacionado con el texto |
+
+### Unidad `rem`
+
+`rem` se calcula a partir del tamaño de fuente del elemento raíz.
+
+```css
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1rem;
+}
+```
+
+Con la configuración habitual del navegador:
+
+```text
+1rem ≈ 16px
+0.5rem ≈ 8px
+1.5rem ≈ 24px
+2rem ≈ 32px
+```
+
+Ejemplo:
+
+```css
+.tarjeta {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+```
+
+`rem` es recomendable para:
+
+- tamaños de fuente;
+- márgenes;
+- rellenos;
+- separaciones;
+- anchos máximos;
+- puntos de quiebre.
+
+### Unidad `em`
+
+`em` depende del tamaño de fuente del elemento o de su contexto.
+
+```css
+.boton {
+  font-size: 1rem;
+  padding: 0.75em 1.25em;
+}
+```
+
+Si aumenta el tamaño de fuente del botón, su relleno también aumenta proporcionalmente.
+
+`em` es útil para construir componentes que escalen como una unidad.
+
+### Porcentajes
+
+```css
+.imagen {
+  width: 100%;
+}
+```
+
+El ancho ocupa el 100 % del espacio disponible dentro del contenedor.
+
+### Unidades de ventana
+
+```css
+.hero {
+  min-height: 70vh;
+}
+```
+
+`70vh` representa el 70 % del alto de la ventana.
+
+En dispositivos móviles puede utilizarse:
+
+```css
+.hero {
+  min-height: 70dvh;
+}
+```
+
+`dvh` se adapta al espacio visible cuando aparecen o desaparecen las barras del navegador.
+
+### Unidad `ch`
+
+```css
+p {
+  max-width: 65ch;
+}
+```
+
+Esta unidad es útil para limitar la longitud de una línea de texto y mejorar la lectura.
+
+### Unidad `fr`
+
+Se utiliza en CSS Grid:
+
+```css
+.hero__contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+```
+
+Cada columna recibe una fracción igual del espacio disponible.
+
+También se pueden combinar proporciones:
+
+```css
+.nosotros__contenido {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+```
+
+### Funciones para medidas adaptables
+
+#### `min()`
+
+Escoge el valor menor:
+
+```css
+.contenedor {
+  width: min(100% - 2rem, 75rem);
+}
+```
+
+#### `max()`
+
+Escoge el valor mayor:
+
+```css
+.seccion {
+  padding-inline: max(1rem, 4vw);
+}
+```
+
+#### `clamp()`
+
+Define un mínimo, un valor adaptable y un máximo:
+
+```css
+.hero h1 {
+  font-size: clamp(2.25rem, 6vw, 4.75rem);
+}
+```
+
+Esto significa:
+
+- tamaño mínimo: `2.25rem`;
+- tamaño adaptable: `6vw`;
+- tamaño máximo: `4.75rem`.
+
+#### `calc()`
+
+Permite realizar cálculos:
+
+```css
+main {
+  min-height: calc(100vh - 5rem);
+}
+```
+
+---
+
+
+## 18. Formulario
 
 El formulario incluye:
 
@@ -517,8 +964,7 @@ Como el proyecto utiliza únicamente HTML y CSS, el formulario no almacenará lo
 ---
 
 
-
-## 20. Conclusión
+## 19. Conclusión
 
 Este caso permite aplicar los fundamentos del desarrollo web mediante un proyecto construido exclusivamente con HTML5 y CSS3.
 
