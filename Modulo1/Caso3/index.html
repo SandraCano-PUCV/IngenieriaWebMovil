@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Acceso AulaBot</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="encabezado">
+    <div class="contenedor encabezado__contenido">
+      <a class="marca" href="#inicio">AulaBot</a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#acceso">Acceso</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="presentacion">
+      <div class="contenedor presentacion__contenido">
+        <p class="etiqueta">Caso 3 · Autenticación simulada</p>
+        <h1>Registro e inicio de sesión</h1>
+        <p>
+          Crea una cuenta de AulaBot, inicia sesión y accede a un área
+          privada simulada utilizando HTML, CSS y JavaScript.
+        </p>
+      </div>
+    </section>
+
+    <section id="acceso" class="seccion">
+      <div class="contenedor">
+
+        <div id="zonaAutenticacion">
+          <div class="selector-formulario" role="tablist" aria-label="Acceso">
+            <button
+              id="tabRegistro"
+              class="selector-formulario__boton activo"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panelRegistro"
+            >
+              Crear cuenta
+            </button>
+
+            <button
+              id="tabLogin"
+              class="selector-formulario__boton"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panelLogin"
+            >
+              Iniciar sesión
+            </button>
+          </div>
+
+          <div class="paneles">
+            <section
+              id="panelRegistro"
+              class="panel"
+              role="tabpanel"
+              aria-labelledby="tabRegistro"
+            >
+              <div class="panel__encabezado">
+                <h2>Crear una cuenta</h2>
+                <p>
+                  Completa todos los campos obligatorios para registrar
+                  un nuevo usuario.
+                </p>
+              </div>
+
+              <form id="formRegistro" class="formulario" novalidate>
+                <div class="campo">
+                  <label for="registroNombre">
+                    Nombre completo
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    id="registroNombre"
+                    name="nombre"
+                    type="text"
+                    autocomplete="name"
+                    minlength="3"
+                    maxlength="80"
+                    required
+                    aria-describedby="errorRegistroNombre"
+                  >
+
+                  <small
+                    id="errorRegistroNombre"
+                    class="mensaje-error"
+                    aria-live="polite"
+                  ></small>
+                </div>
+
+                <div class="campo">
+                  <label for="registroCorreo">
+                    Correo electrónico
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    id="registroCorreo"
+                    name="correo"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    aria-describedby="errorRegistroCorreo"
+                  >
+
+                  <small
+                    id="errorRegistroCorreo"
+                    class="mensaje-error"
+                    aria-live="polite"
+                  ></small>
+                </div>
+
+                <div class="campo">
+                  <label for="registroRol">
+                    Tipo de usuario
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <select
+                    id="registroRol"
+                    name="rol"
+                    required
+                    aria-describedby="errorRegistroRol"
+                  >
+                    <option value="">Seleccione una opción</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="Docente">Docente</option>
+                    <option value="Visitante">Visitante</option>
+                  </select>
+
+                  <small
+                    id="errorRegistroRol"
+                    class="mensaje-error"
+                    aria-live="polite"
+                  ></small>
+                </div>
+
+                <div class="campo">
+                  <label for="registroPassword">
+                    Contraseña
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <div class="campo-password">
+                    <input
+                      id="registroPassword"
+                      name="password"
+                      type="password"
+                      autocomplete="new-password"
+                      minlength="8"
+                      required
+                      aria-describedby="ayudaPassword errorRegistroPassword"
+                    >
+
+                    <button
+                      class="boton-mostrar"
+                      type="button"
+                      data-password-target="registroPassword"
+                      aria-label="Mostrar contraseña"
+                    >
+                      Mostrar
+                    </button>
+                  </div>
+
+                  <small id="ayudaPassword" class="ayuda">
+                    Debe contener al menos 8 caracteres, una mayúscula,
+                    una minúscula y un número.
+                  </small>
+
+                  <small
+                    id="errorRegistroPassword"
+                    class="mensaje-error"
+                    aria-live="polite"
+                  ></small>
+                </div>
+
+                <div class="campo">
+                  <label for="registroConfirmacion">
+                    Confirmar contraseña
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <div class="campo-password">
+                    <input
+                      id="registroConfirmacion"
+                      name="confirmacion"
+                      type="password"
+                      autocomplete="new-password"
+                      required
+                      aria-describedby="errorRegistroConfirmacion"
+                    >
+
+                    <button
+                      class="boton-mostrar"
+                      type="button"
+                      data-password-target="registroConfirmacion"
+                      aria-label="Mostrar confirmación de contraseña"
+                    >
+                      Mostrar
+                    </button>
+                  </div>
+
+                  <small
+                    id="errorRegistroConfirmacion"
+                    class="mensaje-error"
+                    aria-live="polite"
+                  ></small>
+                </div>
+
+                <div class="campo">
+                  <label class="opcion">
+                    <input
+                      id="registroCondiciones"
+                      name="condiciones"
+                      type="checkbox"
+                      required
+                      aria-describedby="errorRegistroCondiciones"
+                    >
+
+                    <span>
+                      Acepto las condiciones de uso de esta demostración.
+                    </span>
+                  </label>
+
+                  <small
+                    id="errorRegistroCondiciones"
+                    class="mensaje-error"
+                    aria-live="polite"
+                  ></small>
+                </div>
+
+                <button class="boton" type="submit">
+                  Registrar cuenta
+                </button>
+
+                <div
+                  id="mensajeRegistro"
+                  class="mensaje-formulario"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+              </form>
+            </section>
+
+            <section
+              id="panelLogin"
+              class="panel"
+              role="tabpanel"
+              aria-labelledby="tabLogin"
+              hidden
+            >
+              <div class="panel__encabezado">
+                <h2>Iniciar sesión</h2>
+                <p>
+                  Ingresa con el correo y la contraseña registrados.
+                </p>
+              </div>
+
+              <form id="formLogin" class="formulario" novalidate>
+                <div class="campo">
+                  <label for="loginCorreo">
+                    Correo electrónico
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    id="loginCorreo"
+                    name="correo"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    aria-describedby="errorLoginCorreo"
+                  >
+
+                  <small
+                    id="errorLoginCorreo"
+                    class="mensaje-error"
+                    aria-live="polite"
+                  ></small>
+                </div>
+
+                <div class="campo">
+                  <label for="loginPassword">
+                    Contraseña
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <div class="campo-password">
+                    <input
+                      id="loginPassword"
+                      name="password"
+                      type="password"
+                      autocomplete="current-password"
+                      required
+                      aria-describedby="errorLoginPassword"
+                    >
+
+                    <button
+                      class="boton-mostrar"
+                      type="button"
+                      data-password-target="loginPassword"
+                      aria-label="Mostrar contraseña"
+                    >
+                      Mostrar
+                    </button>
+                  </div>
+
+                  <small
+                    id="errorLoginPassword"
+                    class="mensaje-error"
+                    aria-live="polite"
+                  ></small>
+                </div>
+
+                <button class="boton" type="submit">
+                  Iniciar sesión
+                </button>
+
+                <div
+                  id="mensajeLogin"
+                  class="mensaje-formulario"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+              </form>
+            </section>
+          </div>
+        </div>
+
+        <section id="zonaPrivada" class="zona-privada" hidden>
+          <div>
+            <p class="etiqueta">Sesión activa</p>
+            <h2>Bienvenido/a, <span id="usuarioNombre"></span></h2>
+            <p>
+              Has accedido correctamente al área privada de AulaBot.
+            </p>
+          </div>
+
+          <dl class="perfil">
+            <div>
+              <dt>Correo</dt>
+              <dd id="usuarioCorreo"></dd>
+            </div>
+
+            <div>
+              <dt>Rol</dt>
+              <dd id="usuarioRol"></dd>
+            </div>
+
+            <div>
+              <dt>Último acceso</dt>
+              <dd id="usuarioAcceso"></dd>
+            </div>
+          </dl>
+
+          <button id="botonCerrarSesion" class="boton" type="button">
+            Cerrar sesión
+          </button>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>
+        &copy; 2026 Laboratorio AulaBot · Caso educativo.
+      </p>
+    </div>
+  </footer>
+       
+    </body>
+</html>

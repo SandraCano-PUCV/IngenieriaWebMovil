@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista dinámica de actividades AulaBot.">
+  <title>Lista de actividades AulaBot</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor">
+      <h1>Lista de actividades AulaBot</h1>
+      <p>Agrega y elimina actividades utilizando JavaScript y el DOM.</p>
+    </div>
+  </header>
+
+  <main class="contenedor contenido-principal">
+    <section class="panel" aria-labelledby="tituloFormulario">
+      <h2 id="tituloFormulario">Agregar actividad</h2>
+
+      <form id="formActividad" class="formulario" novalidate>
+        <div class="campo">
+          <label for="actividad">Nombre de la actividad</label>
+          <input
+            id="actividad"
+            name="actividad"
+            type="text"
+            maxlength="80"
+            placeholder="Ejemplo: Preparar materiales"
+            aria-describedby="mensajeFormulario"
+            required
+          >
+        </div>
+
+        <button class="boton" type="submit">Agregar</button>
+      </form>
+
+      <p id="mensajeFormulario" class="mensaje" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="tituloLista">
+      <div class="panel__encabezado">
+        <div>
+          <h2 id="tituloLista">Actividades registradas</h2>
+          <p id="contador" class="contador">0 actividades</p>
+        </div>
+
+        <button id="botonVaciar" class="boton boton--secundario" type="button" disabled>
+          Vaciar lista
+        </button>
+      </div>
+
+      <p id="listaVacia" class="lista-vacia">Todavía no hay actividades registradas.</p>
+      <ul id="listaActividades" class="lista" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Caso 2 · HTML, CSS, JavaScript y DOM.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -963,7 +963,6 @@ Como el proyecto utiliza únicamente HTML y CSS, el formulario no almacenará lo
 
 ---
 
-
 ## 19. Conclusión
 
 Este caso permite aplicar los fundamentos del desarrollo web mediante un proyecto construido exclusivamente con HTML5 y CSS3.
