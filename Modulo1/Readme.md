@@ -1,5 +1,5 @@
 # Módulo 1
-- [Etiquetas HTML](Etiquetas_elementos_HTML.md)
+- [Etiquetas HTML](Etiquetas_Elementos_HTML.md)
 - [CSS](css.md) 
 - [DNS](dns.md)
 - [Frameworks](frameworks.md)
