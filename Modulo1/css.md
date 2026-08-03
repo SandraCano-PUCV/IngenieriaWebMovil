@@ -229,6 +229,163 @@ Selecciona el elemento cuyo atributo `id` coincide con el selector.
 
 Un `id` debe ser único dentro del documento.
 
+### Diferencia entre class, id ¿cuál usar?
+Los atributos `class` e `id` permiten identificar elementos HTML para:
+
+- aplicar estilos CSS;
+- seleccionarlos con JavaScript;
+- crear navegación interna;
+- relacionar controles de formularios;
+- mejorar la accesibilidad;
+- construir componentes reutilizables.
+
+Aunque ambos sirven para identificar elementos, no se utilizan de la misma manera.
+
+La idea principal es:
+
+```text
+id    → identifica un elemento único
+class → agrupa elementos reutilizables
+```
+### ¿Cuándo utilizar `id`?
+1. **para identificar una única sección**
+```html
+<header id="encabezado-principal">
+  ...
+</header>
+```
+2. **Crear enlaces internos**
+```html
+<a href="#contacto">
+  Ir a contacto
+</a>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+</section>
+```
+
+3. **Relacionar un `<label>` con un campo**
+```html
+<label for="correo">
+  Correo electrónico
+</label>
+
+<input
+  id="correo"
+  name="correo"
+  type="email"
+>
+```
+4. **Accesibilidad**
+```html
+<input
+  id="nombre"
+  aria-describedby="ayuda-nombre"
+>
+
+<p id="ayuda-nombre">
+  Ingrese su nombre completo.
+</p>
+```
+5. **Seleccionar un elemento con Javascript**
+```javascript
+const correo =
+  document.getElementById("correo");
+```
+
+También puede usarse:
+
+```javascript
+const correo =
+  document.querySelector("#correo");
+```
+
+---
+### ¿Cuándo utilizar `class`?
+1.**Aplicar el mismo estilo**
+```html
+<p class="destacado">
+  Primer mensaje
+</p>
+
+<p class="destacado">
+  Segundo mensaje
+</p>
+```
+
+```css
+.destacado {
+  color: darkblue;
+  font-weight: bold;
+}
+```
+
+2.**Crear componentes reutilizables**
+```html
+<article class="tarjeta">
+  ...
+</article>
+
+<article class="tarjeta">
+  ...
+</article>
+```
+
+```css
+.tarjeta {
+  padding: 1.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.75rem;
+}
+```
+
+3. **Representar estados o variantes**
+```html
+<button class="boton boton--activo">
+  Taller seleccionado
+</button>
+```
+
+```css
+.boton {
+  padding: 0.75rem 1rem;
+}
+
+.boton--activo {
+  color: white;
+  background-color: green;
+}
+```
+
+4. **Seleccionar varios elementos con JavaScript**
+```javascript
+const tarjetas =
+  document.querySelectorAll(".tarjeta");
+
+tarjetas.forEach(tarjeta => {
+  console.log(tarjeta.textContent);
+});
+```
+
+## Comparación entre `id` y `class`
+
+| Característica | `id` | `class` |
+|---|---|---|
+| Propósito | Identificar un elemento único | Agrupar elementos |
+| Puede repetirse | No | Sí |
+| Cantidad por elemento | Generalmente uno | Puede tener varias clases |
+| Selector CSS | `#nombre` | `.nombre` |
+| JavaScript | `getElementById()` | `querySelectorAll()` |
+| Enlaces internos | Sí | No directamente |
+| Formularios | Relaciona `label` y control | Se usa para estilos |
+| Accesibilidad | Relaciona elementos ARIA | Se usa para presentación |
+| Uso recomendado | Identificación única | Estilos y componentes |
+
+---
+
+
+
 ### Selector de atributo
 
 ```css

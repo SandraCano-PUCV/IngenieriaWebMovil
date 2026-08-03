@@ -20,7 +20,6 @@
 14. [Fuentes](#fuentes)
 
 ## Conceptos básicos
-
 - **Etiqueta:** marca escrita entre signos `<` y `>`, por ejemplo `<p>` o `</p>`.
 - **Elemento:** conjunto formado por la etiqueta de apertura, el contenido y la etiqueta de cierre: `<p>Texto</p>`.
 - **Atributo:** información adicional incluida en la etiqueta de apertura: `<a href="pagina.html">Enlace</a>`.
