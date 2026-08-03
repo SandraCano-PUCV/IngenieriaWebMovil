@@ -1,6 +1,6 @@
 # Contenidos
 # Módulo 1
-- [Etiquetas HTML](Modulo1/etiquetas.md)
+- [Etiquetas HTML](Modulo1/Etiquetas_Elementos_HTML.md)
 - [CSS](Modulo1/css.md) 
 - [DNS](Modulo1/dns.md)
 - [JavaScript](Modulo1/JavaScript.md), [DOM](Modulo1/dom.md)
@@ -14,3 +14,4 @@
 - https://www.markdownguide.org/cheat-sheet/
 - https://validator.w3.org/
 - https://nodejs.org/en
+- https://docs.github.com/es
