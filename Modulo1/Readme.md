@@ -2,7 +2,7 @@
 - [Etiquetas HTML](Etiquetas_Elementos_HTML.md)
 - [CSS](css.md) 
 - [DNS](dns.md)
-- [Frameworks](frameworks.md)
+- [Frameworks de diseño](frameworks.md)
 - [JavaScript](JavaScript.md), [DOM](dom.md)
 - [Caso1:HTML+CSS](Caso1/)
 - [Caso2:HTML+CSS+JS](Caso2/)
