@@ -9,6 +9,7 @@
 - [Caso2:HTML+CSS+JS](Modulo1/Caso2/)
 - [Caso3:HTML+CSS+JS-Formularios](Modulo1/Caso3/)
 - [Caso4:SPA](Modulo1/Caso4/)
+- [Talleres](Modulo1/Talleres/)
 
 
 # Referencias
