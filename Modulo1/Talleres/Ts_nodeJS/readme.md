@@ -1,5 +1,7 @@
 # Práctica: Introducción a TypeScript
 
+Si quieres profundizar más de [TypeScript](typescript.md)
+
 ## 1. Objetivo de la práctica
 
 El objetivo de esta actividad es utilizar **TypeScript** en un caso sencillo de desarrollo de aplicaciones, comprendiendo especialmente:
