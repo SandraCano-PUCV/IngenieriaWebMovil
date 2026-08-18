@@ -1,4 +1,4 @@
-# Práctica: Introducción a TypeScript para Desarrollo Web y Móvil
+# Práctica: Introducción a TypeScript
 
 ## 1. Objetivo de la práctica
 
