@@ -734,8 +734,19 @@ Rutas protegidas
 [Figma - Prototipo de UI/UX](https://www.figma.com/design/P5ZCkmvzJPXbf0Q4MrjiHx/Dise%C3%B1oprototipos?node-id=0-1&t=yTsY3fzxhUPc6GON-1)
 
 ---
-## Liberías usadas con React
-- 
+## Liberías usadas con React (Ionic)
+- TailwindCSS
+
+### Librerías principales
+
+| Librería | Propósito |
+|---|---|
+| `react` | Construcción de la interfaz mediante componentes. |
+| `react-dom` | Renderizado de los componentes React en el navegador. |
+| `@ionic/react` | Proporciona los componentes de interfaz de Ionic, como `IonPage`, `IonContent`, `IonButton`, `IonInput`, `IonCard`, entre otros. |
+| `@ionic/react-router` | Integración de la navegación de Ionic con React Router. |
+| `react-router-dom` | Definición y gestión de rutas entre las diferentes vistas de la aplicación. |
+| `ionicons` | Biblioteca de iconos utilizada por Ionic. |
 
 ## Tecnologías
 - **Ionic Framework** (v7+)
