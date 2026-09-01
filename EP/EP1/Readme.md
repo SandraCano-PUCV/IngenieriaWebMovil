@@ -7,14 +7,15 @@
 ##  Índice
 1. [Justificación del problema](#justificación-del-problema)
 2. [Usuarios](#usuarios-objetivo-quién-usará-la-aplicación)
+    - [Roles](#roles-del-sistema)
     - [Proto-personas](#proto-personas)
 3. [Requerimientos](#requerimientos)
 4. [Arquitectura de la Información/ UX](#arquitectura-de-navegación)
     - [Diferenciación x roles](#diferenciación-de-acceso-según-roles)
-    - [Flujos principales Tareas]()
-    - [Puntos críticos de interacción]()
-    - [Justificación Técnica]()
-5. [Bocetos UX/UI]()
+    - [Flujos principales Tareas](#flujos-de-tareas)
+    - [Puntos críticos de interacción](#puntos-críticos-de-interacción)
+    - [Justificación Técnica](#justificación-técnica)
+5. [Bocetos UX/UI](#bocetos-uiux)
 6. [Frontend con Ionic-React]()
 
 ## Justificación del problema
@@ -74,12 +75,13 @@ Entre las necesidades identificadas para este grupo se encuentran:
 Los docentes constituyen el segundo grupo de usuarios del sistema. Su función principal será administrar los micro-recursos educativos disponibles en la plataforma.
 
 A diferencia del estudiante, el docente tendrá acceso a funcionalidades relacionadas con la creación y mantenimiento de contenidos.
+
 ---
-# Roles del Sistema
+## Roles del Sistema
 - **Administrador**: Usuario encargado de la gestión general de la plataforma.
 - **Estudiante**: Puede crear, editar y eliminar productos.
 - **Docente**: Usuario encargado de administrar contenidos educativos.
-## Definición de conceptos
+### Definición de conceptos
 **Rol**: Define qué puede hacer un usuario dentro del sistema.
 **Proto-persona**: Describe quién podría ser ese usuario, sus características, necesidades, objetivos, dificultades y contexto de uso.
 
