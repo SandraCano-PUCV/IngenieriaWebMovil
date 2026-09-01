@@ -31,6 +31,7 @@ Para ello, se propone considerar un mecanismo de caracterización que permita ob
 La propuesta no supone que un estudiante aprenda exclusivamente mediante una determinada modalidad. El perfil se utilizará como un mecanismo de apoyo para la organización y personalización de los recursos disponibles.
 
 Por lo tanto, el desarrollo de una plataforma web y móvil permitiría centralizar la gestión de los micro-recursos, facilitar su consulta desde diferentes dispositivos y proporcionar una experiencia de interacción diferenciada entre estudiantes y docentes.
+
 ---
 ## Usuarios objetivo (Quién usará la aplicación)
 La aplicación considera principalmente dos grupos de usuarios: **estudiantes y docentes**. Adicionalmente, se considera un rol de administración para la gestión general de la plataforma.
