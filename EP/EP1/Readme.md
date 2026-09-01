@@ -81,6 +81,7 @@ A diferencia del estudiante, el docente tendrá acceso a funcionalidades relacio
 - **Administrador**: Usuario encargado de la gestión general de la plataforma.
 - **Estudiante**: Puede crear, editar y eliminar productos.
 - **Docente**: Usuario encargado de administrar contenidos educativos.
+
 ### Definición de conceptos
 **Rol**: Define qué puede hacer un usuario dentro del sistema.
 **Proto-persona**: Describe quién podría ser ese usuario, sus características, necesidades, objetivos, dificultades y contexto de uso.
@@ -88,6 +89,7 @@ A diferencia del estudiante, el docente tendrá acceso a funcionalidades relacio
 **Por ejemplo** 
 *Rol*: Estudiante
 *Proto-persona*: Estudiante universitario de 20 años que utiliza principalmente su teléfono móvil, dispone de poco tiempo continuo para estudiar y prefiere consultar contenidos breves durante sus desplazamientos.
+
 ---
 ## Proto-personas
 Las siguientes proto-personas corresponden a perfiles hipotéticos construidos a partir del análisis del problema y de las características esperadas de los usuarios de la plataforma. No representan resultados obtenidos directamente de usuarios reales, sino una caracterización preliminar utilizada para orientar las decisiones de diseño y desarrollo.
