@@ -377,9 +377,8 @@ Las credenciales, claves de API, secretos y configuraciones sensibles no deberá
 
 ### Rendimiento
 
-#### RNF-REN-01 — Tiempo de respuesta
-
-Las operaciones habituales de consulta deberán presentar una respuesta al usuario en un tiempo máximo de **2 segundos**, bajo las condiciones normales definidas para las pruebas del sistema.
+#### RNF-REN-01 — Rendimiento de las operaciones de consulta
+Las operaciones habituales de consulta deberán ejecutarse de manera fluida y estable, sin provocar bloqueos de la interfaz ni interrupciones en la interacción del usuario, bajo las condiciones normales definidas para las pruebas del sistema.
 
 #### RNF-REN-02 — Transferencia de información
 
@@ -389,12 +388,10 @@ La aplicación deberá solicitar al backend únicamente los datos necesarios par
 
 La carga de imágenes, videos u otros recursos multimedia no deberá bloquear la navegación ni impedir la interacción con las demás funcionalidades de la aplicación.
 
-
-
 ## Requerimientos No Funcionales
 
 ### RNF-01: Tiempo de respuesta
-- El sistema debe responder a solicitudes de registro, edición o búsqueda en menos de **2 segundos** en el 95% de los casos.
+- El sistema debe responder a solicitudes de registro, edición o búsqueda en tiempos de respuesta adecuados de la navegación, consulta de micro-recursos y ejecución de las funcionalidades principales, evitando demoras perceptibles que interrumpan la continuidad de la interacción del usuario.
 
 ### RNF-02: Seguridad
 - Solo usuarios autenticados pueden gestionar productos.
@@ -412,7 +409,7 @@ La carga de imágenes, videos u otros recursos multimedia no deberá bloquear la
   - Safari
 
 ### RNF-05: Escalabilidad
-- El sistema debe poder manejar al menos **10,000 productos** sin disminución significativa del rendimiento
+- El sistema deberá utilizar una arquitectura modular que permita incrementar el volumen de usuarios, micro-recursos y operaciones, facilitando futuras mejoras en infraestructura o capacidad de procesamiento sin modificar la lógica principal de la aplicación.
 ---
 ## Arquitectura de Navegación
 ### 1. Rutas principales y secundarias
