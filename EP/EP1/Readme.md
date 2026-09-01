@@ -1,7 +1,8 @@
+# Plataforma Educativa Adaptativa para la Selección de Micro-Recursos según Preferencias de Aprendizaje
+
 # Presentado por:
 - Pepo Mendoza
 - Pepa Palacios
-# Plataforma Educativa Adaptativa para la Selección de Micro-Recursos según Preferencias de Aprendizaje
 
 ##  Índice
 1. [Justificación del problema](#justificación-del-problema)
