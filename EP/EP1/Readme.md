@@ -92,7 +92,7 @@ A diferencia del estudiante, el docente tendrá acceso a funcionalidades relacio
 
 ---
 ## Proto-personas
-Las siguientes proto-personas corresponden a perfiles hipotéticos construidos a partir del análisis del problema y de las características esperadas de los usuarios de la plataforma. No representan resultados obtenidos directamente de usuarios reales, sino una caracterización preliminar utilizada para orientar las decisiones de diseño y desarrollo.
+Las siguientes proto-personas corresponden a **perfiles hipotéticos** construidos a partir del análisis del problema y de las características esperadas de los usuarios de la plataforma.**No representan resultados obtenidos** directamente de usuarios reales, sino una caracterización preliminar utilizada para orientar las decisiones de diseño y desarrollo.
 
 ---
 ### Proto-persona 1: Estudiante con ritmo de aprendizaje autónomo
