@@ -1,0 +1,7 @@
+{
+  "name": "mis-cursos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
