@@ -15,6 +15,7 @@
 - [Ionic](Modulo2/)
 # Módulo 3
 - [Node.JS con Express](Modulo3/intro.md)
+    - - [Ejemplo] (Modulo3/APIREST)
     - - [Práctica Backend con JS](Modulo3/practica_backend_js.md)
     - - [Práctica Backend con TS](Modulo3/practica_backend_ts.md)
 - [Códigos de Estado](Modulo3/codestate.md)
