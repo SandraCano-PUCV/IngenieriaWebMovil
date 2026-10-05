@@ -18,7 +18,9 @@
     - - [Ejemplo](Modulo3/APIREST)
     - - [Práctica Backend con JS](Modulo3/practica_backend_js.md)
     - - [Práctica Backend con TS](Modulo3/practica_backend_ts.md)
+- [Práctica 1: API REST con Express, JWT y dos recursos](Modulo3/practica1.md)
 - [Códigos de Estado](Modulo3/codestate.md)
+- [Seguridad](Modulo3/seguridad.md)
 # Referencias
 - https://www.markdownguide.org/cheat-sheet/
 - https://validator.w3.org/
