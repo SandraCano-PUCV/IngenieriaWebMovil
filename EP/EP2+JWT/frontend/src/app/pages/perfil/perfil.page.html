@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="usuario">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ usuario.username }}</ion-card-title>
+        <ion-card-subtitle>{{ usuario.email }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Región:</strong> {{ usuario.region }}</p>
+        <p><strong>Comuna:</strong> {{ usuario.comuna }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <ng-container *ngIf="!usuario">
+    <p>Cargando perfil...</p>
+  </ng-container>
+</ion-content>

@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input formControlName="username"></ion-input>
+      </ion-item>
+      <ion-note *ngIf="registerForm.get('username')?.hasError('required') && registerForm.get('username')?.touched" color="danger">
+        El nombre de usuario es obligatorio.
+      </ion-note>
+
+      <ion-item>
+        <ion-label position="floating">RUT</ion-label>
+        <ion-input formControlName="rut"></ion-input>
+      </ion-item>
+      <ion-note *ngIf="registerForm.get('rut')?.hasError('required') && registerForm.get('rut')?.touched" color="danger">
+        El RUT es obligatorio.
+      </ion-note>
+
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-note *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched" color="danger">
+        El correo es obligatorio.
+      </ion-note>
+      <ion-note *ngIf="registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched" color="danger">
+        El formato del correo es inválido.
+      </ion-note>
+
+      <ion-item>
+        <ion-label>Región</ion-label>
+        <ion-select formControlName="region" (ionChange)="onRegionChange($event.detail.value)">
+          <ion-select-option *ngFor="let region of regiones" [value]="region">{{ region }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-note *ngIf="registerForm.get('region')?.hasError('required') && registerForm.get('region')?.touched" color="danger">
+        Debe seleccionar una región.
+      </ion-note>
+
+      <ion-item>
+        <ion-label>Comuna</ion-label>
+        <ion-select formControlName="comuna">
+          <ion-select-option *ngFor="let c of comunas" [value]="c">{{ c }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-note *ngIf="registerForm.get('comuna')?.hasError('required') && registerForm.get('comuna')?.touched" color="danger">
+        Debe seleccionar una comuna.
+      </ion-note>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <ion-note *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched" color="danger">
+        La contraseña es obligatoria.
+      </ion-note>
+      <ion-note *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched" color="danger">
+        La contraseña debe tener al menos 6 caracteres.
+      </ion-note>
+
+      <ion-item>
+        <ion-label position="floating">Confirmar Contraseña</ion-label>
+        <ion-input formControlName="confirmPassword" type="password"></ion-input>
+      </ion-item>
+
+      <ion-note *ngIf="registerForm.get('confirmPassword')?.hasError('required') && registerForm.get('confirmPassword')?.touched" color="danger">
+        Debe confirmar la contraseña.
+      </ion-note>
+      <ion-note *ngIf="registerForm.errors?.['mismatch'] && registerForm.get('confirmPassword')?.touched" color="danger">
+        Las contraseñas no coinciden.
+      </ion-note>
+
+      <ion-item lines="none">
+        <ion-checkbox slot="start" formControlName="terms"></ion-checkbox>
+        <ion-label>Acepto los términos y condiciones</ion-label>
+      </ion-item>
+      <ion-note *ngIf="registerForm.get('terms')?.invalid && registerForm.get('terms')?.touched" color="danger">
+        Debe aceptar los términos y condiciones.
+      </ion-note>
+
+      <ion-button expand="full" type="submit" [disabled]="registerForm.invalid">
+        Registrarse
+      </ion-button>
+
+    </ion-list>
+  </form>
+</ion-content>

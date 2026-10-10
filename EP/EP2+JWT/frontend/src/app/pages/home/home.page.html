@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+ 
+    <ion-title>Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input formControlName="username"></ion-input>
+      </ion-item>
+      <ion-note *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched" color="danger">
+        Usuario requerido.
+      </ion-note>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-note *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" color="danger">
+        Contraseña requerida.
+      </ion-note>
+
+      <p *ngIf="mensaje" class="error-msg">
+        {{ mensaje }}
+    </p>
+
+
+      <ion-button expand="full" type="submit" [disabled]="loginForm.invalid">Ingresar</ion-button>
+    </ion-list>
+  </form>
+</ion-content>

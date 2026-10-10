@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno (¡nunca subas .env!)
+.env
+
+# MySQL dumps
+#*.sql
+
+# Coverage
+coverage/
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# dist o build (si generas)
+dist/
+build/
